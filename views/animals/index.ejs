@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+    
+    <main>
+
+        <div>
+
+            <a href="/animals/new"><button>Create a new animal</button></a>
+            <a href="/user/logout"><button>Logout</button></a>
+
+            <% for (animal of animals) { %>
+            
+            <article>
+                <a href="/animals/<%= animal._id %>">
+                <h2>
+                    <%= animal.name %> - <%= animal.extinct %>
+                </h2>
+                </a>
+            </article>
+            
+            <% } %>
+        </div>
+    </main>
+
+
+</body>
+</html>
